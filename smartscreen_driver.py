@@ -69,8 +69,8 @@ def build_packet(cpu_temp, cpu_clock, cpu_usage, cpu_fan,
     sf(F_GPU_USAGE,  gpu_usage)
     sf(F_GPU_MCLK,   gpu_mclk)
     sf(F_GPU_MUSAGE, gpu_musage)
-    sf(F_RAM_USED,   min(ram_used_mb, 65534))
-    sf(F_RAM_AVAIL,  min(ram_avail_mb, 65534))
+    sf(F_RAM_USED,   min(ram_used_mb, 32767))
+    sf(F_RAM_AVAIL,  min(ram_avail_mb, 32767))
     sf(F_RAM_PCT,    ram_pct)
     sf(0x0D,         0)              # unused
     sf(F_DISK_TOTAL, disk_total_gb)
