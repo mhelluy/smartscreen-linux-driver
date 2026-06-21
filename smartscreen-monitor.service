@@ -1,0 +1,20 @@
+[Unit]
+Description=SmartScreen USB LCD Monitor Driver
+After=multi-user.target systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+
+[Service]
+Type=simple
+User=root
+Environment=PYTHONUNBUFFERED=1
+WorkingDirectory=__WORKDIR__
+ExecStartPre=/bin/sleep 2
+ExecStart=__PYTHON__ __SCRIPT__
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=smartscreen
+
+[Install]
+WantedBy=multi-user.target
